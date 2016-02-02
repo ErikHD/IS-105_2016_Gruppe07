@@ -1,21 +1,15 @@
 A)
-Helse/Idrett: 1829 - 17,35%
-Human/Pedagogikk: 1525 - 14,47%
-Kunstfag:420  3,98%
-Tekn/realfag: 2166 - 20,55%
-Lærerutdanning: 1506 14,28%
-Øk/samfunn: 3093 - 29,34%
-Total: 10539 - 100%
+Helse/Idrett:      -1829 - 17,35%
+Human/Pedagogikk:  -1525 - 14,47%
+Kunstfag:          -420    -3,98%
+Tekn/realfag:      -2166  -20,55%
+Lærerutdanning:    -1506  -14,28%
+Øk/samfunn:        -3093  -29,34%
+Total:             -10539 - 100%
 
 B) Øk/Samfunnsfag, fordi det er det mest sannsynlige.
 
 C)
-Hmmm....For variabel, 4alternativer som 2bit, 2alt som 3bit.
-Øk/samf 00-
-Takn/real - 01
-Helse/Idrett - 10
-Human/peda 11
- som 2bit
-
-Lærer og kunstfag som 3bit
- 
+Sannsynligvis 4 alternativer som 2bit og de resterende 2
+alternativer som 3bit om det lar seg gjøre - oppdateres
+---
