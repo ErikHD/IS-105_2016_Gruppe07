@@ -1,15 +1,61 @@
-A)
-Helse/Idrett:      -1829 - 17,35%
-Human/Pedagogikk:  -1525 - 14,47%
-Kunstfag:          -420    -3,98%
-Tekn/realfag:      -2166  -20,55%
-Lærerutdanning:    -1506  -14,28%
-Øk/samfunn:        -3093  -29,34%
-Total:             -10539 - 100%
+A)--------------------------------------------------------
 
-B) Øk/Samfunnsfag, fordi det er det mest sannsynlige.
+Institutt---------Antall---Prosentvis fordeling
 
-C)
-Sannsynligvis 4 alternativer som 2bit og de resterende 2
-alternativer som 3bit om det lar seg gjøre - oppdateres
----
+Øk/samfunn:        -3093    -29,34%
+Tekn/realfag:      -2166    -20,55%
+Helse/Idrett:      -1829   - 17,35%
+Human/Pedagogikk:  -1525   - 14,47%
+Lærerutdanning:    -1506    -14,28%
+Kunstfag:          -420      -3,98%
+
+Total:             -10539   - 100%
+
+B) --------------------------------------------------
+
+Øk/Samfunnsfag, fordi det er det mest sannsynlige.
+
+C)------------------------------------------------------------
+
+Om man følger regnestykket for å produsere et huffman-tre:
+(Rangert som A-F der A er mest sannsynlig og F minst, dvs A = Øk/Samfunn)
+
+ABCDEF - (0.2934,A) - (0.2055,B) - (0.1735,C) (0.1447,D) (0.1428,E) (0.0398,F)
+--------->
+(0.2934,A) - (0.2055,B) - (0.1735,C) (0.1447,D) (0.1826,E^F)
+(0.2934,A) - (0.2055,B) - (0.1735,C) (0.3273,D^(E^F)
+(0.2934,A) - (0.3790,B^C) (0.3273,D^(E^F)
+(0.3790,B^C) (0.6297,A^D^(E^F)
+1.0 (A^B^(CDEF)
+
+Da vil altså treet se slik ut:
+
+                  / \
+                 1   0 
+                / \  / \
+               1  B  A  0
+              / \      / \
+             C   D     E  F
+
+--------------------------------
+A - Øk/samf   = 10
+B - Tekn/realfag = 01
+C - Helse/idrett = 111
+D - Human/peda = 110
+E - Lærer     = 001
+F - Kunstfag = 000
+
+D)--------------------------------------------------
+Forenkler, tar kun med 2 desimaler her
+
+A - 10 - 2bits - 0.29
+B - 01 - 2bits - 0.21
+C - 111 - 3bits - 0.17
+D - 110 - 3bits - 0.14
+E - 001 - 3bits - 0.14
+F - 000 - 3bits - 0.04
+
+Shannons entropi gir da:
+(0.29^2) + (0.21^2) + (0.17^3) + (0.14^3) + (0.14^3) + (0.04^3) = 2.47 bits
+Det vil si at 100 gjennomsnittslige symboler gir 247bits med informasjon.
+
