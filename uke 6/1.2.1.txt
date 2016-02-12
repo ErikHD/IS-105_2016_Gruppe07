@@ -1,0 +1,83 @@
+1.2.1 (A)--------------------------------------
+
+Motatt - Table - Dekodet til -  Ny entry i table
+2          2           B
+3          =4         C            BC
+3          =5          C           CC
+1          =6          A           CA
+3          =7          C           AC
+4          =8         BC          CB
+5          =9         CC          BCC
+10         =10        CCC         CCC
+11         =11        CCCC        CCCC
+6          =12        CA          CCCCC
+10         =13        CCC         ACCC
+1          =14         A          CCCA
+
+Det gir oss følgende table hos mottaker:
+
+[1]  A
+[2]  B
+[3]  C
+[4]  BC
+[5]  CC
+[6]  CA
+[7]  AC
+[8]  CB
+[9]  BCC
+[10] CCC
+[11] CCCC
+[12] CCCCC
+[13] ACCC
+[14] CCCA
+
+1.2.1 (C) --------------------------------------
+Antatt at både hvert symbol (ABC) og tall i lzw-sekvensen
+består av 4 bits (hexadecimal / decimal)
+
+Ukodet melding (22*4): 88bits uten lzw
+LZW sekvens (12*4) = 48bits med lzw
+En besparelse på 40 bits gir 40/88*100 = 
+45,45% reduksjon i meldingens størrelse ved bruk av lzw
+i dette tilfelle.
+
+1.2.1 (D)-----------------------------------------
+
+Huffman kode: Beregning av sannsynlighet
+for hvert symbol:
+
+A:3 / 22 = 13.63%
+B:2 / 22 = 09.09%
+C: 17/22 = 77.27%
+
+Utregning av kode:
+
+S{(A-13) (B-09) (C-72)}
+S{(C-72) (A*B-22)
+S{C / A*B - 1)
+Dette gir oss følgende huffman kode:
+
+C = 1
+A = 01
+B = 00
+
+Melding kodet om med huffman:
+
+Cx17 * 1 = 17bits
+Ax3 * 2 = 6bits
+Bx2 * 2 = 4bits
+Huffman kodet melding = 27bits
+
+Dette gir en besparelse på 88-27 = 61bits
+61/88 = 69% besparelse
+
+Da jeg er usikker på om den første antagelsen er riktig
+(at både lzw sekvens og symbol er 4 bits hver) er det vanskelig
+å si noe konkret om forholdet.Men man kan rimelig gjøre minst 
+EN antagelse, og det er at lzw koden ikke kommer til sin fulle rett
+i meldinger så korte som denne. LZW vil ha økende besparelse jo flere 
+gjentatte kombinasjoner av symboler som sendes, som da dekodes vha tabellen.
+I tilfeller der meldingen er så kort at det nesten ikke finnes gjentatte 
+kombinasjoner av symboler, vil besparelsen være langt fra optimal.
+
+
