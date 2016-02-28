@@ -1,8 +1,8 @@
 import timeit
 
-
+#lager en liste med 1000tall, legger needle midt i listen
 haystack = range(1000)
-needle = 1500
+needle = 500
 
 def search_fast(haystack, needle):
     for item in haystack:
